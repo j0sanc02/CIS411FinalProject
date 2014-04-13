@@ -159,11 +159,23 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CarsController.cs" />
+    <Compile Include="Controllers\HelloWorldController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404131622054_Initial.cs" />
+    <Compile Include="Migrations\201404131622054_Initial.Designer.cs">
+      <DependentUpon>201404131622054_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404131637253_PriceYear.cs" />
+    <Compile Include="Migrations\201404131637253_PriceYear.Designer.cs">
+      <DependentUpon>201404131637253_PriceYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Car.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -214,6 +226,12 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\HelloWorld\Index.cshtml" />
+    <Content Include="Views\Cars\Create.cshtml" />
+    <Content Include="Views\Cars\Delete.cshtml" />
+    <Content Include="Views\Cars\Details.cshtml" />
+    <Content Include="Views\Cars\Edit.cshtml" />
+    <Content Include="Views\Cars\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -224,6 +242,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201404131622054_Initial.resx">
+      <DependentUpon>201404131622054_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404131637253_PriceYear.resx">
+      <DependentUpon>201404131637253_PriceYear.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
