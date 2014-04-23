@@ -24,29 +24,38 @@ namespace CarLot2.Controllers
         //}
 
         // GET: /Cars/
-        public ActionResult Index(string id, string make)
+        public ActionResult Index(string cmake, string searchString)
         {
             var MakeLst = new List<string>();
 
             var MakeQry = from d in db.Cars
-                           orderby d.Make
-                           select d.Make;
+                          orderby d.Make
+                          select d.Make;
 
             MakeLst.AddRange(MakeQry.Distinct());
-            ViewBag.carmake = new SelectList(MakeLst);
+            ViewBag.cmake = new SelectList(MakeLst);
 
-            string searchString = id; 
+            //var boollst = new List<bool>();
+
+            //var boolqry = from x in db.Cars
+            //              where x.Checked.Equals(true)
+            //              select x;
+            //boollst.AddRange(boolqry.Distinct())
+
+
+
+
             var cars = from m in db.Cars
-                         select m;
+                       select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 cars = cars.Where(s => s.Model.Contains(searchString));
-           
+
             }
-            if (!string.IsNullOrEmpty(make))
+            if (!string.IsNullOrEmpty(cmake))
             {
-                cars = cars.Where(x => x.Make == make);
+                cars = cars.Where(x => x.Make == cmake);
             }
 
             return View(cars);

@@ -12,8 +12,8 @@
     @using (Html.BeginForm("Index", "Cars", FormMethod.Get))
     {
     <p>
-        Make: @Html.DropDownList("carmake", "All")
-        Model: @Html.TextBox("SearchString") 
+        Make: @Html.DropDownList("cmake", "All")
+        Model: @Html.TextBox("searchString") 
         <input type="submit" value="Filter" />
 
         @*@Html.ActionLink("Compare", "IsChecked", new { id = item.ID })*@
