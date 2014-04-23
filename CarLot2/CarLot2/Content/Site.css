@@ -1,12 +1,17 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #FFFFCC;
+    color: black;
+    align-content: center;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: #FFFFCC;
+    align-content: center;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -39,4 +44,23 @@ input[type="checkbox"].input-validation-error {
 
 .validation-summary-valid {
     display: none;
+}
+
+.commentbox {
+    align-content: center;
+
+}
+
+.footer{
+        align-content: center;
+}
+
+.header{
+        align-content: center;
+}
+
+.table{
+            align-content: center;
+
+
 }

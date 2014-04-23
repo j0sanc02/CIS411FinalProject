@@ -162,6 +162,7 @@
     <Compile Include="Controllers\CarsController.cs" />
     <Compile Include="Controllers\HelloWorldController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -173,6 +174,18 @@
     <Compile Include="Migrations\201404131637253_PriceYear.Designer.cs">
       <DependentUpon>201404131637253_PriceYear.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404222119599_c.cs" />
+    <Compile Include="Migrations\201404222119599_c.Designer.cs">
+      <DependentUpon>201404222119599_c.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404222130172_Checked.cs" />
+    <Compile Include="Migrations\201404222130172_Checked.Designer.cs">
+      <DependentUpon>201404222130172_Checked.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404231811085_new2.cs" />
+    <Compile Include="Migrations\201404231811085_new2.Designer.cs">
+      <DependentUpon>201404231811085_new2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Car.cs" />
@@ -181,12 +194,15 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\alcatraz.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\header.JPG" />
+    <Content Include="Content\header1.jpg" />
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -232,6 +248,12 @@
     <Content Include="Views\Cars\Details.cshtml" />
     <Content Include="Views\Cars\Edit.cshtml" />
     <Content Include="Views\Cars\Index.cshtml" />
+    <Content Include="Views\User.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -249,6 +271,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404131637253_PriceYear.resx">
       <DependentUpon>201404131637253_PriceYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404222119599_c.resx">
+      <DependentUpon>201404222119599_c.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404222130172_Checked.resx">
+      <DependentUpon>201404222130172_Checked.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404231811085_new2.resx">
+      <DependentUpon>201404231811085_new2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

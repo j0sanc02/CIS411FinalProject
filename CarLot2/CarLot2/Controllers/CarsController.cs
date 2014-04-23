@@ -4,15 +4,24 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
+using System.Xml;
 using CarLot2.Models;
+using System.IO;
+
 
 namespace CarLot2.Controllers
 {
     public class CarsController : Controller
     {
         private CarDBContext db = new CarDBContext();
+
+        //public ActionResult IsChecked()
+        //{
+        //    bool ischecked = 
+            
+        //    return View(model);
+        //}
 
         // GET: /Cars/
         public ActionResult Index(string id, string make)
@@ -44,6 +53,11 @@ namespace CarLot2.Controllers
 
         }
 
+        public ActionResult User()
+        {
+            return View();
+        }
+
         // GET: /Cars/Details/5
         public ActionResult Details(int? id)
         {
@@ -68,7 +82,7 @@ namespace CarLot2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ID,Year,Make,Model,Mileage,ExtColor,IntColor,Price")] Car car)
+        public ActionResult Create([Bind(Include="ID,carID,Checked,Year,Make,Model,Mileage,ExtColor,IntColor,Price")] Car car)
         {
             if (ModelState.IsValid)
             {
@@ -100,7 +114,7 @@ namespace CarLot2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,Year,Make,Model,Mileage,ExtColor,IntColor,Price")] Car car)
+        public ActionResult Edit([Bind(Include="ID,carID,Checked,Year,Make,Model,Mileage,ExtColor,IntColor,Price")] Car car)
         {
             if (ModelState.IsValid)
             {
@@ -144,6 +158,29 @@ namespace CarLot2.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+
+        }
+
+        public static DataSet getCarEconmy(string carId)
+        {
+            DataSet ds = new DataSet();
+            String BASE_URL = "http://www.fueleconomy.gov/ws/rest/vehicle/";
+            String url = BASE_URL + carId;
+
+            using (var w = new WebClient())
+            {
+                var xml_data = string.Empty;
+                try
+                {
+                    xml_data = w.DownloadString(url);
+                    ds.ReadXml(new XmlTextReader(new StringReader(xml_data)));
+                }
+                catch (Exception)
+                {
+                    Console.Out.WriteLine("Failed to download url: " + url);
+                }
+            }
+            return ds;
         }
     }
 }

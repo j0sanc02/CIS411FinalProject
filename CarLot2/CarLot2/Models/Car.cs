@@ -11,7 +11,10 @@ namespace CarLot2.Models
     {
         public int ID { get; set; }
 
-        [Range(1900, 2100)]
+        public bool Checked { get; set; }
+
+        public string carID { get; set; }
+
         public int Year { get; set; }
 
         [StringLength(60, MinimumLength = 2)]
